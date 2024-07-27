@@ -8,7 +8,8 @@ import {
     Route,
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
-import { About, Home, Contact, User } from "./components/index.js";
+import { About, Home, Contact, User, Github } from "./components/index.js";
+import { getGithubData } from "./components/apiCalls.js";
 
 // const router = createBrowserRouter([
 //     {
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="user/:userId" element={<User />} />
+            <Route path="github" element={<Github />} loader={getGithubData} />
         </Route>
     )
 );
